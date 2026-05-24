@@ -19,7 +19,10 @@ public class TestServiceImpl implements TestService {
         ioService.printLine("");
         ioService.printFormattedLine("Please answer the questions below%n");
         List<Question> allQuestion = questionDao.findAll();
-        for (int i = 1; i < allQuestion.size(); i++) {
+        for (int i = 0; i < allQuestion.size(); i++) {
+            if (allQuestion.get(i).text().startsWith("# Добавить сюда своих вопросов. Эту строку надо пропустить")) {
+                continue;
+            }
             ioService.printLine(allQuestion.get(i).text());
             List<Answer> answers = allQuestion.get(i).answers();
             for (int j = 0; j < answers.size(); j++) {
