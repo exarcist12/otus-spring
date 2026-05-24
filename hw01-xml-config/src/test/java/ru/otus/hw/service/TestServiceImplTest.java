@@ -25,7 +25,6 @@ public class TestServiceImplTest {
         assertTrue(output.contains("4"), "Вариант ответа не выведен");
     }
 
-
     private static class FakeIOService implements IOService {
         private final List<String> lines = new ArrayList<>();
 
